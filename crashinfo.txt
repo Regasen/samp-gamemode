@@ -1,0 +1,100 @@
+
+--------------------------
+SA-MP Server: 0.3.7-R2
+
+Exception At Address: 0x00000000 Module: (Unknown)
+
+Registers:
+EAX: 0x00000001	EBX: 0x0337A590	ECX: 0x0001883C	EDX: 0x00000000
+ESI: 0x008567FB	EDI: 0x00000000	EBP: 0x0337A5A4	ESP: 0x03392DFB
+EFLAGS: 0x00010202
+
+Stack:
++0000: 0x00000000   0x01487800   0x00000000   0x52A13000
++0010: 0x28C12DDD   0x4E49500F   0x444F432D   0x00000045
++0020: 0x00000000   0x00000000   0x00000000   0x00000000
++0030: 0x00000000   0x00000000   0x00000000   0x00000000
++0040: 0x00000000   0x00000000   0x00000000   0x00000000
++0050: 0x00000000   0x00000000   0x00000000   0x00000000
++0060: 0x00000000   0x00000000   0x00000000   0x00000000
++0070: 0x00000000   0x00000000   0x00000000   0x00000000
++0080: 0x00000000   0x00000000   0x00000000   0x00000000
++0090: 0x00000000   0x00000000   0x00000000   0x00000000
++00A0: 0x00000000   0x00000000   0x00000000   0x00000000
++00B0: 0x00000000   0x00000000   0x00000000   0x00000000
++00C0: 0x00000000   0x00000000   0x00000000   0x00000000
++00D0: 0x00000000   0x00000000   0x00000000   0x00000000
++00E0: 0x00000000   0x00000000   0x00000000   0x00000000
++00F0: 0x00000000   0x00000000   0x00000000   0x00000000
++0100: 0x00000000   0x00000000   0x00000000   0x00000000
++0110: 0x00000000   0x00000000   0x00000000   0x00000000
++0120: 0x00000000   0x00000000   0x00000000   0x00000000
++0130: 0x00000000   0x00000000   0x00000000   0x00000000
+
+--------------------------
+
+Loaded Modules:
+samp-server.exe	A: 0x00400000 - 0x00519000	(C:\Regasen\Regasen Play\samp-server.exe)
+ntdll.dll	A: 0x776D0000 - 0x77850000	(C:\Windows\SysWOW64\ntdll.dll)
+kernel32.dll	A: 0x76560000 - 0x76670000	(C:\Windows\syswow64\kernel32.dll)
+KERNELBASE.dll	A: 0x76BC0000 - 0x76C07000	(C:\Windows\syswow64\KERNELBASE.dll)
+SHELL32.dll	A: 0x757C0000 - 0x7640B000	(C:\Windows\syswow64\SHELL32.dll)
+msvcrt.dll	A: 0x76E00000 - 0x76EAC000	(C:\Windows\syswow64\msvcrt.dll)
+SHLWAPI.dll	A: 0x75590000 - 0x755E7000	(C:\Windows\syswow64\SHLWAPI.dll)
+GDI32.dll	A: 0x76EB0000 - 0x76F40000	(C:\Windows\syswow64\GDI32.dll)
+USER32.dll	A: 0x76780000 - 0x76880000	(C:\Windows\syswow64\USER32.dll)
+ADVAPI32.dll	A: 0x764A0000 - 0x76540000	(C:\Windows\syswow64\ADVAPI32.dll)
+sechost.dll	A: 0x76C20000 - 0x76C39000	(C:\Windows\SysWOW64\sechost.dll)
+RPCRT4.dll	A: 0x76FD0000 - 0x770C0000	(C:\Windows\syswow64\RPCRT4.dll)
+SspiCli.dll	A: 0x75060000 - 0x750C0000	(C:\Windows\syswow64\SspiCli.dll)
+CRYPTBASE.dll	A: 0x75050000 - 0x7505C000	(C:\Windows\syswow64\CRYPTBASE.dll)
+LPK.dll	A: 0x76550000 - 0x7655A000	(C:\Windows\syswow64\LPK.dll)
+USP10.dll	A: 0x766E0000 - 0x7677D000	(C:\Windows\syswow64\USP10.dll)
+WSOCK32.dll	A: 0x72D70000 - 0x72D77000	(C:\Windows\system32\WSOCK32.dll)
+WS2_32.dll	A: 0x77290000 - 0x772C5000	(C:\Windows\syswow64\WS2_32.dll)
+NSI.dll	A: 0x76540000 - 0x76546000	(C:\Windows\syswow64\NSI.dll)
+WINMM.dll	A: 0x73910000 - 0x73942000	(C:\Windows\system32\WINMM.dll)
+IMM32.DLL	A: 0x770C0000 - 0x77120000	(C:\Windows\system32\IMM32.DLL)
+MSCTF.dll	A: 0x771C0000 - 0x7728C000	(C:\Windows\syswow64\MSCTF.dll)
+jit.DLL	A: 0x72230000 - 0x72274000	(C:\Regasen\Regasen Play\plugins\jit.DLL)
+MSVCP100.dll	A: 0x721C0000 - 0x72229000	(C:\Windows\system32\MSVCP100.dll)
+MSVCR100.dll	A: 0x70060000 - 0x7011F000	(C:\Windows\system32\MSVCR100.dll)
+streamer.DLL	A: 0x72280000 - 0x722CC000	(C:\Regasen\Regasen Play\plugins\streamer.DLL)
+MSVCP140.dll	A: 0x6FFF0000 - 0x7005D000	(C:\Windows\system32\MSVCP140.dll)
+VCRUNTIME140.dll	A: 0x72180000 - 0x72195000	(C:\Windows\system32\VCRUNTIME140.dll)
+api-ms-win-crt-runtime-l1-1-0.dll	A: 0x721B0000 - 0x721B4000	(C:\Windows\system32\api-ms-win-crt-runtime-l1-1-0.dll)
+ucrtbase.DLL	A: 0x6C6D0000 - 0x6C7B1000	(C:\Windows\system32\ucrtbase.DLL)
+api-ms-win-core-timezone-l1-1-0.dll	A: 0x721A0000 - 0x721A3000	(C:\Windows\system32\api-ms-win-core-timezone-l1-1-0.dll)
+api-ms-win-core-file-l2-1-0.dll	A: 0x72160000 - 0x72163000	(C:\Windows\system32\api-ms-win-core-file-l2-1-0.dll)
+api-ms-win-core-localization-l1-2-0.dll	A: 0x72170000 - 0x72173000	(C:\Windows\system32\api-ms-win-core-localization-l1-2-0.dll)
+api-ms-win-core-synch-l1-2-0.dll	A: 0x71070000 - 0x71073000	(C:\Windows\system32\api-ms-win-core-synch-l1-2-0.dll)
+api-ms-win-core-processthreads-l1-1-1.dll	A: 0x71340000 - 0x71343000	(C:\Windows\system32\api-ms-win-core-processthreads-l1-1-1.dll)
+api-ms-win-core-file-l1-2-0.dll	A: 0x71450000 - 0x71453000	(C:\Windows\system32\api-ms-win-core-file-l1-2-0.dll)
+api-ms-win-crt-string-l1-1-0.dll	A: 0x70150000 - 0x70154000	(C:\Windows\system32\api-ms-win-crt-string-l1-1-0.dll)
+api-ms-win-crt-heap-l1-1-0.dll	A: 0x70230000 - 0x70233000	(C:\Windows\system32\api-ms-win-crt-heap-l1-1-0.dll)
+api-ms-win-crt-stdio-l1-1-0.dll	A: 0x70130000 - 0x70134000	(C:\Windows\system32\api-ms-win-crt-stdio-l1-1-0.dll)
+api-ms-win-crt-convert-l1-1-0.dll	A: 0x70140000 - 0x70144000	(C:\Windows\system32\api-ms-win-crt-convert-l1-1-0.dll)
+api-ms-win-crt-locale-l1-1-0.dll	A: 0x6FFE0000 - 0x6FFE3000	(C:\Windows\system32\api-ms-win-crt-locale-l1-1-0.dll)
+api-ms-win-crt-math-l1-1-0.dll	A: 0x6FFD0000 - 0x6FFD5000	(C:\Windows\system32\api-ms-win-crt-math-l1-1-0.dll)
+api-ms-win-crt-multibyte-l1-1-0.dll	A: 0x6FFC0000 - 0x6FFC5000	(C:\Windows\system32\api-ms-win-crt-multibyte-l1-1-0.dll)
+api-ms-win-crt-time-l1-1-0.dll	A: 0x6FFB0000 - 0x6FFB3000	(C:\Windows\system32\api-ms-win-crt-time-l1-1-0.dll)
+api-ms-win-crt-filesystem-l1-1-0.dll	A: 0x6FFA0000 - 0x6FFA3000	(C:\Windows\system32\api-ms-win-crt-filesystem-l1-1-0.dll)
+api-ms-win-crt-environment-l1-1-0.dll	A: 0x6FF80000 - 0x6FF83000	(C:\Windows\system32\api-ms-win-crt-environment-l1-1-0.dll)
+api-ms-win-crt-utility-l1-1-0.dll	A: 0x6FF90000 - 0x6FF93000	(C:\Windows\system32\api-ms-win-crt-utility-l1-1-0.dll)
+mysql.DLL	A: 0x6E9F0000 - 0x6EA45000	(C:\Regasen\Regasen Play\plugins\mysql.DLL)
+log-core.dll	A: 0x6E9D0000 - 0x6E9EE000	(C:\Regasen\Regasen Play\log-core.dll)
+libmariadb.dll	A: 0x6C5F0000 - 0x6C6CE000	(C:\Regasen\Regasen Play\libmariadb.dll)
+NLAapi.dll	A: 0x72D60000 - 0x72D70000	(C:\Windows\system32\NLAapi.dll)
+napinsp.dll	A: 0x72D50000 - 0x72D60000	(C:\Windows\system32\napinsp.dll)
+pnrpnsp.dll	A: 0x72D30000 - 0x72D42000	(C:\Windows\system32\pnrpnsp.dll)
+mswsock.dll	A: 0x72CF0000 - 0x72D2C000	(C:\Windows\System32\mswsock.dll)
+DNSAPI.dll	A: 0x73B90000 - 0x73BD4000	(C:\Windows\system32\DNSAPI.dll)
+winrnr.dll	A: 0x72CE0000 - 0x72CE8000	(C:\Windows\System32\winrnr.dll)
+rasadhlp.dll	A: 0x70270000 - 0x70276000	(C:\Windows\system32\rasadhlp.dll)
+sscanf.DLL	A: 0x10000000 - 0x1000F000	(C:\Regasen\Regasen Play\plugins\sscanf.DLL)
+pawncmd.DLL	A: 0x6E990000 - 0x6E9C5000	(C:\Regasen\Regasen Play\plugins\pawncmd.DLL)
+pawnregex.DLL	A: 0x6E950000 - 0x6E983000	(C:\Regasen\Regasen Play\plugins\pawnregex.DLL)
+wshtcpip.dll	A: 0x72CD0000 - 0x72CD5000	(C:\Windows\System32\wshtcpip.dll)
+IPHLPAPI.DLL	A: 0x73B70000 - 0x73B8C000	(C:\Windows\system32\IPHLPAPI.DLL)
+WINNSI.DLL	A: 0x73B60000 - 0x73B67000	(C:\Windows\system32\WINNSI.DLL)
+wship6.dll	A: 0x70280000 - 0x70286000	(C:\Windows\System32\wship6.dll)
