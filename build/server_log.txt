@@ -1,0 +1,1039 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:33:57] filterscripts = ""  (string)
+[20:33:57] 
+[20:33:57] Server Plugins
+[20:33:57] --------------
+[20:33:57]  Loading plugin: jit
+[20:33:57]   JIT plugin v2.1 is OK.
+[20:33:57]   Loaded.
+[20:33:57]  Loading plugin: streamer
+[20:33:58] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[20:33:58]   Loaded.
+[20:33:58]  Loading plugin: mysql
+[20:33:58]  >> plugin.mysql: R41-2 successfully loaded.
+[20:33:58]   Loaded.
+[20:33:58]  Loading plugin: sscanf
+[20:33:58] 
+
+[20:33:58]  ===============================
+
+[20:33:58]       sscanf plugin loaded.     
+
+[20:33:58]          Version:  2.8.2        
+
+[20:33:58]    (c) 2012 Alex "Y_Less" Cole  
+
+[20:33:58]  ===============================
+
+[20:33:58]   Loaded.
+[20:33:58]  Loading plugin: pawncmd
+[20:33:58] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[20:33:58]   Loaded.
+[20:33:58]  Loading plugin: pawnregex
+[20:33:58] Pawn.Regex plugin v1.1 by urShadow loaded
+[20:33:58]   Loaded.
+[20:33:58]  Loaded 6 plugins.
+
+[20:33:58] 
+[20:33:58] Filterscripts
+[20:33:58] ---------------
+[20:33:58]   Loaded 0 filterscripts.
+
+[20:33:58] Number of vehicle models: 0
+[20:34:37] [connection] 127.0.0.1:53285 requests connection cookie.
+[20:34:37] [connection] incoming connection: 127.0.0.1:53285 id: 0
+[20:34:38] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[20:35:11] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:35:16] filterscripts = ""  (string)
+[20:35:16] 
+[20:35:16] Server Plugins
+[20:35:16] --------------
+[20:35:16]  Loading plugin: jit
+[20:35:16]   JIT plugin v2.1 is OK.
+[20:35:16]   Loaded.
+[20:35:16]  Loading plugin: streamer
+[20:35:16] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[20:35:16]   Loaded.
+[20:35:16]  Loading plugin: mysql
+[20:35:16]  >> plugin.mysql: R41-2 successfully loaded.
+[20:35:16]   Loaded.
+[20:35:16]  Loading plugin: sscanf
+[20:35:16] 
+
+[20:35:16]  ===============================
+
+[20:35:16]       sscanf plugin loaded.     
+
+[20:35:16]          Version:  2.8.2        
+
+[20:35:16]    (c) 2012 Alex "Y_Less" Cole  
+
+[20:35:16]  ===============================
+
+[20:35:16]   Loaded.
+[20:35:16]  Loading plugin: pawncmd
+[20:35:16] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[20:35:16]   Loaded.
+[20:35:16]  Loading plugin: pawnregex
+[20:35:16] Pawn.Regex plugin v1.1 by urShadow loaded
+[20:35:16]   Loaded.
+[20:35:16]  Loaded 6 plugins.
+
+[20:35:16] 
+[20:35:16] Filterscripts
+[20:35:16] ---------------
+[20:35:16]   Loaded 0 filterscripts.
+
+[20:35:16] Number of vehicle models: 0
+[20:35:19] [connection] 127.0.0.1:58523 requests connection cookie.
+[20:35:21] [connection] incoming connection: 127.0.0.1:58523 id: 0
+[20:35:21] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[20:35:54] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:57:13] filterscripts = ""  (string)
+[22:57:13] 
+[22:57:13] Server Plugins
+[22:57:13] --------------
+[22:57:13]  Loading plugin: jit
+[22:57:14]   JIT plugin v2.1 is OK.
+[22:57:14]   Loaded.
+[22:57:14]  Loading plugin: streamer
+[22:57:14] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[22:57:14]   Loaded.
+[22:57:14]  Loading plugin: mysql
+[22:57:14]  >> plugin.mysql: R41-2 successfully loaded.
+[22:57:14]   Loaded.
+[22:57:14]  Loading plugin: sscanf
+[22:57:14] 
+
+[22:57:14]  ===============================
+
+[22:57:14]       sscanf plugin loaded.     
+
+[22:57:14]          Version:  2.8.2        
+
+[22:57:14]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:57:14]  ===============================
+
+[22:57:14]   Loaded.
+[22:57:14]  Loading plugin: pawncmd
+[22:57:14] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[22:57:14]   Loaded.
+[22:57:14]  Loading plugin: pawnregex
+[22:57:14] Pawn.Regex plugin v1.1 by urShadow loaded
+[22:57:14]   Loaded.
+[22:57:14]  Loaded 6 plugins.
+
+[22:57:14] 
+[22:57:14] Filterscripts
+[22:57:14] ---------------
+[22:57:14]   Loaded 0 filterscripts.
+
+[22:57:15] Number of vehicle models: 0
+[22:58:09] [connection] 127.0.0.1:56224 requests connection cookie.
+[22:58:10] [connection] incoming connection: 127.0.0.1:56224 id: 0
+[22:58:10] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[22:58:44] [part] Yuriy_Abramov has left the server (0:2)
+[22:59:58] [connection] incoming connection: 127.0.0.1:56298 id: 0
+[22:59:58] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:00:06] [part] Yuriy_Abramov has left the server (0:2)
+[23:00:07] [connection] incoming connection: 127.0.0.1:56304 id: 0
+[23:00:08] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:00:32] [part] Yuriy_Abramov has left the server (0:2)
+[23:10:18] [connection] 127.0.0.1:64428 requests connection cookie.
+[23:10:19] [connection] incoming connection: 127.0.0.1:64428 id: 0
+[23:10:20] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:10:53] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:24:26] filterscripts = ""  (string)
+[23:24:26] 
+[23:24:26] Server Plugins
+[23:24:26] --------------
+[23:24:26]  Loading plugin: jit
+[23:24:26]   JIT plugin v2.1 is OK.
+[23:24:26]   Loaded.
+[23:24:26]  Loading plugin: streamer
+[23:24:26] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:24:26]   Loaded.
+[23:24:26]  Loading plugin: mysql
+[23:24:26]  >> plugin.mysql: R41-2 successfully loaded.
+[23:24:26]   Loaded.
+[23:24:26]  Loading plugin: sscanf
+[23:24:26] 
+
+[23:24:26]  ===============================
+
+[23:24:26]       sscanf plugin loaded.     
+
+[23:24:26]          Version:  2.8.2        
+
+[23:24:26]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:24:26]  ===============================
+
+[23:24:26]   Loaded.
+[23:24:26]  Loading plugin: pawncmd
+[23:24:26] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[23:24:26]   Loaded.
+[23:24:26]  Loading plugin: pawnregex
+[23:24:26] Pawn.Regex plugin v1.1 by urShadow loaded
+[23:24:26]   Loaded.
+[23:24:26]  Loaded 6 plugins.
+
+[23:24:26] 
+[23:24:26] Filterscripts
+[23:24:26] ---------------
+[23:24:26]   Loaded 0 filterscripts.
+
+[23:24:26] Number of vehicle models: 0
+[23:24:28] [connection] 127.0.0.1:51270 requests connection cookie.
+[23:24:29] [connection] incoming connection: 127.0.0.1:51270 id: 0
+[23:24:29] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:25:03] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:25:22] filterscripts = ""  (string)
+[23:25:22] 
+[23:25:22] Server Plugins
+[23:25:22] --------------
+[23:25:22]  Loading plugin: jit
+[23:25:22]   JIT plugin v2.1 is OK.
+[23:25:22]   Loaded.
+[23:25:22]  Loading plugin: streamer
+[23:25:22] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:25:22]   Loaded.
+[23:25:22]  Loading plugin: mysql
+[23:25:22]  >> plugin.mysql: R41-2 successfully loaded.
+[23:25:22]   Loaded.
+[23:25:22]  Loading plugin: sscanf
+[23:25:22] 
+
+[23:25:22]  ===============================
+
+[23:25:22]       sscanf plugin loaded.     
+
+[23:25:22]          Version:  2.8.2        
+
+[23:25:22]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:25:22]  ===============================
+
+[23:25:22]   Loaded.
+[23:25:22]  Loading plugin: pawncmd
+[23:25:22] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[23:25:22]   Loaded.
+[23:25:22]  Loading plugin: pawnregex
+[23:25:22] Pawn.Regex plugin v1.1 by urShadow loaded
+[23:25:22]   Loaded.
+[23:25:22]  Loaded 6 plugins.
+
+[23:25:22] 
+[23:25:22] Filterscripts
+[23:25:22] ---------------
+[23:25:22]   Loaded 0 filterscripts.
+
+[23:25:22] Number of vehicle models: 0
+[23:25:24] [connection] 127.0.0.1:51285 requests connection cookie.
+[23:25:25] [connection] incoming connection: 127.0.0.1:51285 id: 0
+[23:25:25] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:25:51] filterscripts = ""  (string)
+[23:25:51] 
+[23:25:51] Server Plugins
+[23:25:51] --------------
+[23:25:51]  Loading plugin: jit
+[23:25:51]   JIT plugin v2.1 is OK.
+[23:25:51]   Loaded.
+[23:25:51]  Loading plugin: streamer
+[23:25:51] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:25:51]   Loaded.
+[23:25:51]  Loading plugin: mysql
+[23:25:51]  >> plugin.mysql: R41-2 successfully loaded.
+[23:25:51]   Loaded.
+[23:25:51]  Loading plugin: sscanf
+[23:25:51] 
+
+[23:25:51]  ===============================
+
+[23:25:51]       sscanf plugin loaded.     
+
+[23:25:51]          Version:  2.8.2        
+
+[23:25:51]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:25:51]  ===============================
+
+[23:25:51]   Loaded.
+[23:25:51]  Loading plugin: pawncmd
+[23:25:51] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[23:25:51]   Loaded.
+[23:25:51]  Loading plugin: pawnregex
+[23:25:51] Pawn.Regex plugin v1.1 by urShadow loaded
+[23:25:51]   Loaded.
+[23:25:51]  Loaded 6 plugins.
+
+[23:25:51] 
+[23:25:51] Filterscripts
+[23:25:51] ---------------
+[23:25:51]   Loaded 0 filterscripts.
+
+[23:25:51] Number of vehicle models: 0
+[23:25:54] [connection] 127.0.0.1:49161 requests connection cookie.
+[23:25:55] [connection] incoming connection: 127.0.0.1:49161 id: 0
+[23:25:55] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:26:01] SELECT * FROM `bans` WHERE `time_end` > UNIX_TIMESTAMP() AND `user_id` = '1'
+[23:26:01] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:54:13] filterscripts = ""  (string)
+[23:54:13] 
+[23:54:13] Server Plugins
+[23:54:13] --------------
+[23:54:13]  Loading plugin: jit
+[23:54:13]   JIT plugin v2.1 is OK.
+[23:54:13]   Loaded.
+[23:54:13]  Loading plugin: streamer
+[23:54:13] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:54:13]   Loaded.
+[23:54:13]  Loading plugin: mysql
+[23:54:13]  >> plugin.mysql: R41-2 successfully loaded.
+[23:54:13]   Loaded.
+[23:54:13]  Loading plugin: sscanf
+[23:54:13] 
+
+[23:54:13]  ===============================
+
+[23:54:13]       sscanf plugin loaded.     
+
+[23:54:13]          Version:  2.8.2        
+
+[23:54:13]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:54:13]  ===============================
+
+[23:54:13]   Loaded.
+[23:54:13]  Loading plugin: pawncmd
+[23:54:13] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[23:54:13]   Loaded.
+[23:54:13]  Loading plugin: pawnregex
+[23:54:13] Pawn.Regex plugin v1.1 by urShadow loaded
+[23:54:13]   Loaded.
+[23:54:13]  Loaded 6 plugins.
+
+[23:54:13] 
+[23:54:13] Filterscripts
+[23:54:13] ---------------
+[23:54:13]   Loaded 0 filterscripts.
+
+[23:54:13] Number of vehicle models: 0
+[23:54:27] [connection] 127.0.0.1:58412 requests connection cookie.
+[23:54:28] [connection] incoming connection: 127.0.0.1:58412 id: 0
+[23:54:28] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:54:35] SELECT * FROM `bans` WHERE `time_end` > UNIX_TIMESTAMP() AND `user_id` = '1'
+[23:54:39] [part] Yuriy_Abramov has left the server (0:2)
+[23:54:41] [connection] incoming connection: 127.0.0.1:58425 id: 0
+[23:54:41] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:54:47] SELECT * FROM `bans` WHERE `time_end` > UNIX_TIMESTAMP() AND `user_id` = '1'
+[23:54:47] [part] Yuriy_Abramov has left the server (0:2)
+[23:54:55] [connection] incoming connection: 127.0.0.1:58437 id: 0
+[23:54:56] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:55:01] SELECT * FROM `bans` WHERE `time_end` > UNIX_TIMESTAMP() AND `user_id` = '1'
+[23:55:01] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:51:44] filterscripts = ""  (string)
+[00:51:44] 
+[00:51:44] Server Plugins
+[00:51:44] --------------
+[00:51:44]  Loading plugin: jit
+[00:51:44]   JIT plugin v2.1 is OK.
+[00:51:44]   Loaded.
+[00:51:44]  Loading plugin: streamer
+[00:51:44] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[00:51:44]   Loaded.
+[00:51:44]  Loading plugin: mysql
+[00:51:45]  >> plugin.mysql: R41-2 successfully loaded.
+[00:51:45]   Loaded.
+[00:51:45]  Loading plugin: sscanf
+[00:51:45] 
+
+[00:51:45]  ===============================
+
+[00:51:45]       sscanf plugin loaded.     
+
+[00:51:45]          Version:  2.8.2        
+
+[00:51:45]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:51:45]  ===============================
+
+[00:51:45]   Loaded.
+[00:51:45]  Loading plugin: pawncmd
+[00:51:45] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[00:51:45]   Loaded.
+[00:51:45]  Loading plugin: pawnregex
+[00:51:45] Pawn.Regex plugin v1.1 by urShadow loaded
+[00:51:45]   Loaded.
+[00:51:45]  Loaded 6 plugins.
+
+[00:51:45] 
+[00:51:45] Filterscripts
+[00:51:45] ---------------
+[00:51:45]   Loaded 0 filterscripts.
+
+[00:51:45] Number of vehicle models: 0
+[00:51:48] [connection] 127.0.0.1:51087 requests connection cookie.
+[00:51:49] [connection] incoming connection: 127.0.0.1:51087 id: 0
+[00:51:49] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:52:14] filterscripts = ""  (string)
+[00:52:14] 
+[00:52:14] Server Plugins
+[00:52:14] --------------
+[00:52:14]  Loading plugin: jit
+[00:52:14]   JIT plugin v2.1 is OK.
+[00:52:14]   Loaded.
+[00:52:14]  Loading plugin: streamer
+[00:52:14] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[00:52:14]   Loaded.
+[00:52:14]  Loading plugin: mysql
+[00:52:14]  >> plugin.mysql: R41-2 successfully loaded.
+[00:52:14]   Loaded.
+[00:52:14]  Loading plugin: sscanf
+[00:52:14] 
+
+[00:52:14]  ===============================
+
+[00:52:14]       sscanf plugin loaded.     
+
+[00:52:14]          Version:  2.8.2        
+
+[00:52:14]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:52:14]  ===============================
+
+[00:52:14]   Loaded.
+[00:52:14]  Loading plugin: pawncmd
+[00:52:14] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[00:52:14]   Loaded.
+[00:52:14]  Loading plugin: pawnregex
+[00:52:14] Pawn.Regex plugin v1.1 by urShadow loaded
+[00:52:14]   Loaded.
+[00:52:14]  Loaded 6 plugins.
+
+[00:52:14] 
+[00:52:14] Filterscripts
+[00:52:14] ---------------
+[00:52:14]   Loaded 0 filterscripts.
+
+[00:52:14] Number of vehicle models: 0
+[00:52:17] [connection] 127.0.0.1:51095 requests connection cookie.
+[00:52:18] [connection] incoming connection: 127.0.0.1:51095 id: 0
+[00:52:18] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[00:52:51] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[02:00:36] filterscripts = ""  (string)
+[02:00:36] 
+[02:00:36] Server Plugins
+[02:00:36] --------------
+[02:00:36]  Loading plugin: jit
+[02:00:36]   JIT plugin v2.1 is OK.
+[02:00:36]   Loaded.
+[02:00:36]  Loading plugin: streamer
+[02:00:36] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[02:00:36]   Loaded.
+[02:00:36]  Loading plugin: mysql
+[02:00:36]  >> plugin.mysql: R41-2 successfully loaded.
+[02:00:36]   Loaded.
+[02:00:36]  Loading plugin: sscanf
+[02:00:36] 
+
+[02:00:36]  ===============================
+
+[02:00:36]       sscanf plugin loaded.     
+
+[02:00:36]          Version:  2.8.2        
+
+[02:00:36]    (c) 2012 Alex "Y_Less" Cole  
+
+[02:00:36]  ===============================
+
+[02:00:36]   Loaded.
+[02:00:36]  Loading plugin: pawncmd
+[02:00:36] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[02:00:36]   Loaded.
+[02:00:36]  Loading plugin: pawnregex
+[02:00:36] Pawn.Regex plugin v1.1 by urShadow loaded
+[02:00:36]   Loaded.
+[02:00:36]  Loaded 6 plugins.
+
+[02:00:36] 
+[02:00:36] Filterscripts
+[02:00:36] ---------------
+[02:00:36]   Loaded 0 filterscripts.
+
+[02:00:36] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:59:55] filterscripts = ""  (string)
+[22:59:55] 
+[22:59:55] Server Plugins
+[22:59:55] --------------
+[22:59:55]  Loading plugin: jit
+[22:59:55]   JIT plugin v2.1 is OK.
+[22:59:55]   Loaded.
+[22:59:55]  Loading plugin: streamer
+[22:59:55] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[22:59:55]   Loaded.
+[22:59:55]  Loading plugin: mysql
+[22:59:55]  >> plugin.mysql: R41-2 successfully loaded.
+[22:59:55]   Loaded.
+[22:59:55]  Loading plugin: sscanf
+[22:59:55] 
+
+[22:59:55]  ===============================
+
+[22:59:55]       sscanf plugin loaded.     
+
+[22:59:55]          Version:  2.8.2        
+
+[22:59:55]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:59:55]  ===============================
+
+[22:59:55]   Loaded.
+[22:59:55]  Loading plugin: pawncmd
+[22:59:55] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[22:59:55]   Loaded.
+[22:59:55]  Loading plugin: pawnregex
+[22:59:55] Pawn.Regex plugin v1.1 by urShadow loaded
+[22:59:55]   Loaded.
+[22:59:55]  Loaded 6 plugins.
+
+[22:59:55] 
+[22:59:55] Filterscripts
+[22:59:55] ---------------
+[22:59:55]   Loaded 0 filterscripts.
+
+[22:59:56] Number of vehicle models: 0
+[23:00:32] [connection] 127.0.0.1:63535 requests connection cookie.
+[23:00:33] [connection] incoming connection: 127.0.0.1:63535 id: 0
+[23:00:34] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:01:03] filterscripts = ""  (string)
+[23:01:03] 
+[23:01:03] Server Plugins
+[23:01:03] --------------
+[23:01:03]  Loading plugin: jit
+[23:01:03]   JIT plugin v2.1 is OK.
+[23:01:03]   Loaded.
+[23:01:03]  Loading plugin: streamer
+[23:01:03] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:01:03]   Loaded.
+[23:01:03]  Loading plugin: mysql
+[23:01:03]  >> plugin.mysql: R41-2 successfully loaded.
+[23:01:03]   Loaded.
+[23:01:03]  Loading plugin: sscanf
+[23:01:03] 
+
+[23:01:03]  ===============================
+
+[23:01:03]       sscanf plugin loaded.     
+
+[23:01:03]          Version:  2.8.2        
+
+[23:01:03]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:01:03]  ===============================
+
+[23:01:03]   Loaded.
+[23:01:03]  Loading plugin: pawncmd
+[23:01:03] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[23:01:03]   Loaded.
+[23:01:03]  Loading plugin: pawnregex
+[23:01:03] Pawn.Regex plugin v1.1 by urShadow loaded
+[23:01:03]   Loaded.
+[23:01:03]  Loaded 6 plugins.
+
+[23:01:03] 
+[23:01:03] Filterscripts
+[23:01:03] ---------------
+[23:01:03]   Loaded 0 filterscripts.
+
+[23:01:03] Number of vehicle models: 0
+[23:01:05] [connection] 127.0.0.1:54595 requests connection cookie.
+[23:01:06] [connection] incoming connection: 127.0.0.1:54595 id: 0
+[23:01:07] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:01:40] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:01:55] filterscripts = ""  (string)
+[23:01:55] 
+[23:01:55] Server Plugins
+[23:01:55] --------------
+[23:01:55]  Loading plugin: jit
+[23:01:55]   JIT plugin v2.1 is OK.
+[23:01:55]   Loaded.
+[23:01:55]  Loading plugin: streamer
+[23:01:55] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:01:55]   Loaded.
+[23:01:55]  Loading plugin: mysql
+[23:01:55]  >> plugin.mysql: R41-2 successfully loaded.
+[23:01:55]   Loaded.
+[23:01:55]  Loading plugin: sscanf
+[23:01:55] 
+
+[23:01:55]  ===============================
+
+[23:01:55]       sscanf plugin loaded.     
+
+[23:01:55]          Version:  2.8.2        
+
+[23:01:55]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:01:55]  ===============================
+
+[23:01:55]   Loaded.
+[23:01:55]  Loading plugin: pawncmd
+[23:01:55] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[23:01:55]   Loaded.
+[23:01:55]  Loading plugin: pawnregex
+[23:01:55] Pawn.Regex plugin v1.1 by urShadow loaded
+[23:01:55]   Loaded.
+[23:01:55]  Loaded 6 plugins.
+
+[23:01:56] 
+[23:01:56] Filterscripts
+[23:01:56] ---------------
+[23:01:56]   Loaded 0 filterscripts.
+
+[23:01:56] Number of vehicle models: 0
+[23:02:02] [connection] 127.0.0.1:54640 requests connection cookie.
+[23:02:03] [connection] incoming connection: 127.0.0.1:54640 id: 0
+[23:02:03] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:02:43] filterscripts = ""  (string)
+[23:02:43] 
+[23:02:43] Server Plugins
+[23:02:43] --------------
+[23:02:43]  Loading plugin: jit
+[23:02:43]   JIT plugin v2.1 is OK.
+[23:02:43]   Loaded.
+[23:02:43]  Loading plugin: streamer
+[23:02:43] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[23:02:43]   Loaded.
+[23:02:43]  Loading plugin: mysql
+[23:02:43]  >> plugin.mysql: R41-2 successfully loaded.
+[23:02:43]   Loaded.
+[23:02:43]  Loading plugin: sscanf
+[23:02:43] 
+
+[23:02:43]  ===============================
+
+[23:02:43]       sscanf plugin loaded.     
+
+[23:02:43]          Version:  2.8.2        
+
+[23:02:43]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:02:43]  ===============================
+
+[23:02:43]   Loaded.
+[23:02:43]  Loading plugin: pawncmd
+[23:02:43] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[23:02:43]   Loaded.
+[23:02:43]  Loading plugin: pawnregex
+[23:02:43] Pawn.Regex plugin v1.1 by urShadow loaded
+[23:02:43]   Loaded.
+[23:02:43]  Loaded 6 plugins.
+
+[23:02:43] 
+[23:02:43] Filterscripts
+[23:02:43] ---------------
+[23:02:43]   Loaded 0 filterscripts.
+
+[23:02:43] Number of vehicle models: 0
+[23:02:45] [connection] 127.0.0.1:54673 requests connection cookie.
+[23:02:46] [connection] incoming connection: 127.0.0.1:54673 id: 0
+[23:02:46] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:03:00] [part] Yuriy_Abramov has left the server (0:1)
+[23:03:00] [connection] incoming connection: 127.0.0.1:54683 id: 0
+[23:03:00] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:03:20] [part] Yuriy_Abramov has left the server (0:2)
+[23:04:23] [connection] incoming connection: 127.0.0.1:54731 id: 0
+[23:04:24] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:04:31] [part] Yuriy_Abramov has left the server (0:1)
+[23:04:32] [connection] incoming connection: 127.0.0.1:54741 id: 0
+[23:04:32] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[23:04:38] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:09:18] filterscripts = ""  (string)
+[00:09:18] 
+[00:09:18] Server Plugins
+[00:09:18] --------------
+[00:09:18]  Loading plugin: jit
+[00:09:18]   JIT plugin v2.1 is OK.
+[00:09:18]   Loaded.
+[00:09:18]  Loading plugin: streamer
+[00:09:18] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[00:09:18]   Loaded.
+[00:09:18]  Loading plugin: mysql
+[00:09:18]  >> plugin.mysql: R41-2 successfully loaded.
+[00:09:18]   Loaded.
+[00:09:18]  Loading plugin: sscanf
+[00:09:18] 
+
+[00:09:18]  ===============================
+
+[00:09:18]       sscanf plugin loaded.     
+
+[00:09:18]          Version:  2.8.2        
+
+[00:09:18]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:09:18]  ===============================
+
+[00:09:18]   Loaded.
+[00:09:18]  Loading plugin: pawncmd
+[00:09:18] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[00:09:18]   Loaded.
+[00:09:18]  Loading plugin: pawnregex
+[00:09:18] Pawn.Regex plugin v1.1 by urShadow loaded
+[00:09:18]   Loaded.
+[00:09:18]  Loaded 6 plugins.
+
+[00:09:18] 
+[00:09:18] Filterscripts
+[00:09:18] ---------------
+[00:09:18]   Loaded 0 filterscripts.
+
+[00:09:18] Number of vehicle models: 0
+[00:10:07] [connection] 127.0.0.1:60856 requests connection cookie.
+[00:10:08] [connection] incoming connection: 127.0.0.1:60856 id: 0
+[00:10:08] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[00:10:14] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:42:13] filterscripts = ""  (string)
+[14:42:13] 
+[14:42:13] Server Plugins
+[14:42:13] --------------
+[14:42:13]  Loading plugin: jit
+[14:42:13]   JIT plugin v2.1 is OK.
+[14:42:13]   Loaded.
+[14:42:13]  Loading plugin: streamer
+[14:42:13] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[14:42:13]   Loaded.
+[14:42:13]  Loading plugin: mysql
+[14:42:13]  >> plugin.mysql: R41-2 successfully loaded.
+[14:42:13]   Loaded.
+[14:42:13]  Loading plugin: sscanf
+[14:42:13] 
+
+[14:42:13]  ===============================
+
+[14:42:13]       sscanf plugin loaded.     
+
+[14:42:13]          Version:  2.8.2        
+
+[14:42:13]    (c) 2012 Alex "Y_Less" Cole  
+
+[14:42:13]  ===============================
+
+[14:42:13]   Loaded.
+[14:42:13]  Loading plugin: pawncmd
+[14:42:13] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[14:42:13]   Loaded.
+[14:42:13]  Loading plugin: pawnregex
+[14:42:13] Pawn.Regex plugin v1.1 by urShadow loaded
+[14:42:13]   Loaded.
+[14:42:13]  Loaded 6 plugins.
+
+[14:42:13] 
+[14:42:13] Filterscripts
+[14:42:13] ---------------
+[14:42:13]   Loaded 0 filterscripts.
+
+[14:42:13] Number of vehicle models: 0
+[14:42:49] [connection] 127.0.0.1:56990 requests connection cookie.
+[14:42:50] [connection] incoming connection: 127.0.0.1:56990 id: 0
+[14:42:51] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[14:43:01] [part] Yuriy_Abramov has left the server (0:2)
+[14:43:15] [connection] incoming connection: 127.0.0.1:59485 id: 0
+[14:43:15] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[14:43:24] [part] Yuriy_Abramov has left the server (0:2)
+[14:43:26] [connection] incoming connection: 127.0.0.1:59487 id: 0
+[14:43:26] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[14:43:49] [part] Yuriy_Abramov has left the server (0:2)
+[14:43:54] [connection] incoming connection: 127.0.0.1:59489 id: 0
+[14:43:54] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[14:44:00] [part] Yuriy_Abramov has left the server (0:2)
+[14:44:31] [connection] incoming connection: 127.0.0.1:59491 id: 0
+[14:44:31] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[14:45:04] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:48:40] filterscripts = ""  (string)
+[14:48:40] 
+[14:48:40] Server Plugins
+[14:48:40] --------------
+[14:48:40]  Loading plugin: jit
+[14:48:40]   JIT plugin v2.1 is OK.
+[14:48:40]   Loaded.
+[14:48:40]  Loading plugin: streamer
+[14:48:40] 
+
+*** Streamer Plugin v2.8.2 by Incognito loaded ***
+
+[14:48:40]   Loaded.
+[14:48:40]  Loading plugin: mysql
+[14:48:40]  >> plugin.mysql: R41-2 successfully loaded.
+[14:48:40]   Loaded.
+[14:48:40]  Loading plugin: sscanf
+[14:48:40] 
+
+[14:48:40]  ===============================
+
+[14:48:40]       sscanf plugin loaded.     
+
+[14:48:40]          Version:  2.8.2        
+
+[14:48:40]    (c) 2012 Alex "Y_Less" Cole  
+
+[14:48:40]  ===============================
+
+[14:48:40]   Loaded.
+[14:48:40]  Loading plugin: pawncmd
+[14:48:40] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[14:48:40]   Loaded.
+[14:48:40]  Loading plugin: pawnregex
+[14:48:40] Pawn.Regex plugin v1.1 by urShadow loaded
+[14:48:40]   Loaded.
+[14:48:40]  Loaded 6 plugins.
+
+[14:48:40] 
+[14:48:40] Filterscripts
+[14:48:40] ---------------
+[14:48:40]   Loaded 0 filterscripts.
+
+[14:48:40] Number of vehicle models: 0
+[14:48:45] [connection] 127.0.0.1:60436 requests connection cookie.
+[14:48:46] [connection] incoming connection: 127.0.0.1:60436 id: 0
+[14:48:46] [join] Yuriy_Abramov has joined the server (0:127.0.0.1)
+[14:49:20] [part] Yuriy_Abramov has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[17:31:54] filterscripts = ""  (string)
+[17:31:54] 
+[17:31:54] Server Plugins
+[17:31:54] --------------
+[17:31:54]  Loading plugin: jit
+[17:31:54]   JIT plugin v2.1 is OK.
+[17:31:54]   Loaded.
+[17:31:54]  Loading plugin: streamer
+[17:31:56]   Failed.
+[17:31:56]  Loading plugin: mysql
+[17:31:57]   Failed.
+[17:31:57]  Loading plugin: sscanf
+[17:31:57]   Failed.
+[17:31:57]  Loading plugin: pawncmd
+[17:31:57] Pawn.CMD plugin v3.1.2 by urShadow loaded
+[17:31:57]   Loaded.
+[17:31:57]  Loading plugin: pawnregex
+[17:31:57] Pawn.Regex plugin v1.1 by urShadow loaded
+[17:31:57]   Loaded.
+[17:31:57]  Loaded 3 plugins.
+
+[17:31:57] 
+[17:31:57] Filterscripts
+[17:31:57] ---------------
+[17:31:57]   Loaded 0 filterscripts.
+
+[17:31:57] Script[gamemodes/regasen.amx]: Run time error 19: "File or function is not found"
+[17:31:57] Number of vehicle models: 0

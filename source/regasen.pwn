@@ -10,57 +10,46 @@
 #undef MAX_PLAYERS 
 #undef MAX_PLAYER_NAME
 
-#define SERVER_NAME 						"Regasen Play"
-#define SERVER_SITE 						"regasen.ru"
+#include "../source/config.cfg"
 
-#define MAX_PLAYER_PASSWORD					(20)
-#define MAX_PLAYER_NAME 					(24)
-#define MAX_PLAYERS 						(300)
-#define MAX_PLAYER_ATTEMPT 					(3)
 #define BYTES_PER_CELL 						(4)
-
-#define ADMIN_LEVEL_DEVELOPER 				(6)
-#define ADMIN_LEVEL_SPECIAL					(5)
-#define ADMIN_LEVEL_MAIN					(4)
-#define ADMIN_LEVEL_SPECTATE 				(3)
-#define ADMIN_LEVEL_MODERATOR 				(2)
-#define ADMIN_LEVEL_IMPROVER 				(1)
 
 #define foreach(%0) 						for(new _i, %0=array_players[_i]; _i <total_players; %0=array_players[++_i])
 #define void%0(%1) 							forward %0(%1); public %0(%1)
 
-#include "../include/sscanf2.inc"
-#include "../include/a_mysql.inc"
-#include "../include/Pawn.CMD.inc"
-#include "../include/Pawn.Regex.inc"
-#include "../include/streamer.inc"
-#include "../include/fixes.inc"
-#include "../include/textdraws.inc"
+#include "../source/include/sscanf2.inc"
+#include "../source/include/a_mysql.inc"
+#include "../source/include/Pawn.CMD.inc"
+#include "../source/include/Pawn.Regex.inc"
+#include "../source/include/streamer.inc"
+#include "../source/include/fixes.inc"
+#include "../source/include/textdraws.inc"
 
-main() 
+main()
 {
 } 
 
 enum ePlayer
 {
-	pID,
 	pLogin[MAX_PLAYER_NAME + 1],
 	pPassword[MAX_PLAYER_PASSWORD + 1],
+	pPINAttempt[9 + 1],
+	pAdminLastIP[24 + 1],
+	pAdminRegIP[24 + 1],
+	pPIN[10 + 1],
+	pIP[24 + 1],
+	
+	pID,
 	pGender,
 	pSkin,
 	pMoney,
 	pAttempt,
 	pLevel,
 	pLogged,
-	pPIN[10],
-	pIP[24 + 1],
-	pPINAttempt[10],
 	Float:pHealth,
 	pMuteTime,
 	pAdminLevel,
-	pAdminLastIP[24 + 1],
 	pAdminLastDate,
-	pAdminRegIP[24 + 1],
 	pAdminRegDate
 };
 
@@ -72,7 +61,8 @@ enum
 	dMenu,
 	dSecurity,
 	dReplacePassword,
-	dReplacePassword2
+	dReplacePassword2,
+	dReport
 };
 
 new PlayerData[MAX_PLAYERS][ePlayer];
@@ -89,8 +79,8 @@ new total_players;
 new convert[11 + 3];
 
 new novice_skin[2][10] = {
-	{1, 2, 3, 6, 7, 20, 21, 22, 23, 24},
-	{12, 13, 190, 41, 55, 56, 69, 91, 93, 148}
+	{LIST_SKIN_MALE},
+	{LIST_SKIN_FEMALE}
 };
 
 public OnGameModeInit()
@@ -133,8 +123,8 @@ public OnPlayerConnect(playerid)
 	SetTimerEx("OnTimeLogin", 30000, false, "d", playerid);
 	
 	if(!regex_check(PlayerData[playerid][pLogin], check_nickname)) return 
-		SendClientMessage(playerid, -1, "Ваш ник {FFA500}не соответствует{FFFFFF} правилам"), 
-		SendClientMessage(playerid, -1, "Пожалуйста, прочтите правила на нашем сайте: {FFA500}"#SERVER_SITE), 
+		SendClientMessage(playerid, -1, "Ваш ник {"#MAIN_COLOR"}не соответствует{FFFFFF} правилам"),
+		SendClientMessage(playerid, -1, "Пожалуйста, прочтите правила на нашем сайте: {"#MAIN_COLOR"}"#SERVER_SITE),
 		Kick(playerid);
 	
 	mysql_format(connect_id, request, sizeof(request), "SELECT * FROM users WHERE login = '%e' LIMIT 1", PlayerData[playerid][pLogin]);
@@ -144,50 +134,26 @@ public OnPlayerConnect(playerid)
 	{
 		case 0:
 		{
-			ShowPlayerDialog(playerid, dRegistry, DIALOG_STYLE_INPUT, "Создание аккаунта", "{FFFFFF}Добро пожаловать на {FFA500}"#SERVER_NAME"{FFFFFF}\nВаш ник не зарегистрирован в системе.\n\nПридумайте пароль, который будет соответствовать данным требованиям:\n - Пароль должен состоять из латинских букв и цифр.\n - Длина пароля должна быть больше 5 и меньше 20 символов.\n - Пароль должен содержать минимум 1 заглавный символ.\n\nВведите этот пароль в поле ниже:", "Далее", "");
+			ShowPlayerDialog(playerid, dRegistry, DIALOG_STYLE_INPUT, "Создание аккаунта", "{FFFFFF}Добро пожаловать на {"#MAIN_COLOR"}"#SERVER_NAME"{FFFFFF}\nВаш ник не зарегистрирован в системе.\n\nПридумайте пароль, который будет соответствовать данным требованиям:\n - Пароль должен состоять из латинских букв и цифр.\n - Длина пароля должна быть больше 5 и меньше 20 символов.\n - Пароль должен содержать минимум 1 заглавный символ.\n\nВведите этот пароль в поле ниже:", "Далее", "");
 		}
 
 		case 1:
 		{
-			cache_get_value_name(0, "password", PlayerData[playerid][pPassword], MAX_PLAYER_PASSWORD);
-			cache_get_value_name(0, "pin", PlayerData[playerid][pPIN], 10);
+			cache_get_value_name(0, "password",     PlayerData[playerid][pPassword], MAX_PLAYER_PASSWORD);
+			cache_get_value_name(0, "pin",          PlayerData[playerid][pPIN], 10);
 
-			cache_get_value_name_int(0, "id", PlayerData[playerid][pID]);
-			cache_get_value_name_int(0, "gender", PlayerData[playerid][pGender]);
-			cache_get_value_name_int(0, "skin", PlayerData[playerid][pSkin]);
-			cache_get_value_name_int(0, "level", PlayerData[playerid][pLevel]);
-			cache_get_value_name_int(0, "money", PlayerData[playerid][pMoney]);
-			cache_get_value_name_int(0, "mute", PlayerData[playerid][pMuteTime]);
+			cache_get_value_name_int(0, "id",       PlayerData[playerid][pID]);
+			cache_get_value_name_int(0, "gender",   PlayerData[playerid][pGender]);
+			cache_get_value_name_int(0, "skin",     PlayerData[playerid][pSkin]);
+			cache_get_value_name_int(0, "level",    PlayerData[playerid][pLevel]);
+			cache_get_value_name_int(0, "money",    PlayerData[playerid][pMoney]);
+			cache_get_value_name_int(0, "mute",     PlayerData[playerid][pMuteTime]);
 
 			cache_get_value_name_float(0, "health", PlayerData[playerid][pHealth]);
 
 			GetPlayerIp(playerid, PlayerData[playerid][pIP], 24);
-
-			mysql_format(connect_id, request, sizeof(request), "UPDATE users SET last_date = '%d', last_ip = '%s' WHERE id = '%d'", gettime(), PlayerData[playerid][pIP], PlayerData[playerid][pID]);
-			mysql_query(connect_id, request);
-
-			mysql_format(connect_id, request, sizeof(request), "SELECT * FROM admins WHERE id = '%d'", PlayerData[playerid][pID]);
-			mysql_query(connect_id, request);
-
-
-			if(cache_num_rows())
-
-			{
-				cache_get_value_name_int(0, "level", PlayerData[playerid][pAdminLevel]);
-
-				cache_get_value_name_int(0, "last_date", PlayerData[playerid][pAdminLastDate]);
-				cache_get_value_name_int(0, "reg_date", PlayerData[playerid][pAdminRegDate]);
-
-				cache_get_value_name(0, "last_ip", PlayerData[playerid][pAdminLastIP], 24);
-				cache_get_value_name(0, "reg_ip", PlayerData[playerid][pAdminRegIP], 24);
-
-
-				mysql_format(connect_id, request, sizeof(request), "UPDATE admins SET last_date = '%d', last_ip = '%s' WHERE id = '%d'", gettime(), PlayerData[playerid][pIP], PlayerData[playerid][pID]);
-				mysql_query(connect_id, request);
-
-
-			}
-			ShowPlayerDialog(playerid, dLogin, DIALOG_STYLE_INPUT, "Вход в аккаунт", "{FFFFFF}Добро пожаловать на {FFA500}"#SERVER_NAME"{FFFFFF}\nВспомните пароль, который вы придумали при создании аккаунта.\n\nВведите ваш пароль ниже:", "Далее", "");
+			
+			ShowPlayerDialog(playerid, dLogin, DIALOG_STYLE_INPUT, "Вход в аккаунт", "{FFFFFF}Добро пожаловать на {"#MAIN_COLOR"}"#SERVER_NAME"{FFFFFF}\nВспомните пароль, который вы придумали при создании аккаунта.\n\nВведите ваш пароль ниже:", "Далее", "");
 		}
 	}
 
@@ -200,7 +166,7 @@ public OnPlayerConnect(playerid)
 
 void OnTimeLogin(playerid)
 {
-	if(0 == PlayerData[playerid][pLogin]) return true;
+	if(1 == PlayerData[playerid][pLogin]) return true;
 	SendClientMessage(playerid, -1, "Время на авторизацию истекло");
 	Kick(playerid);
 	return true;
@@ -256,11 +222,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 			if(length < 5 || length > MAX_PLAYER_PASSWORD || !regex_check(inputtext, check_password)) return 
 					SendClientMessage(playerid, -1, "Ваш пароль не соответствует правилам, придумайте новый пароль"),
-					ShowPlayerDialog(playerid, dRegistry, DIALOG_STYLE_INPUT, "Создание аккаунта", "{FFFFFF}Добро пожаловать на {FFA500}"#SERVER_NAME"{FFFFFF}\nВаш ник не зарегистрирован в системе.\n\nПридумайте пароль, который будет соответствовать данным требованиям:\n - Пароль должен состоять из латинских букв и цифр.\n - Длина пароля должна быть больше 5 и меньше 20 символов.\n - Пароль должен содержать минимум 1 заглавный символ.\n\nВведите этот пароль в поле ниже:", "Далее", "");
+					ShowPlayerDialog(playerid, dRegistry, DIALOG_STYLE_INPUT, "Создание аккаунта", "{FFFFFF}Добро пожаловать на {"#MAIN_COLOR"}"#SERVER_NAME"{FFFFFF}\nВаш ник не зарегистрирован в системе.\n\nПридумайте пароль, который будет соответствовать данным требованиям:\n - Пароль должен состоять из латинских букв и цифр.\n - Длина пароля должна быть больше 5 и меньше 20 символов.\n - Пароль должен содержать минимум 1 заглавный символ.\n\nВведите этот пароль в поле ниже:", "Далее", "");
 			
 			strmid(PlayerData[playerid][pPassword], inputtext, 0, MAX_PLAYER_PASSWORD, MAX_PLAYER_PASSWORD + 1);
 
-			ShowPlayerDialog(playerid, dGender, DIALOG_STYLE_MSGBOX, "Пол персонажа", "{FFFFFF}Регистрация на {FFA500}"#SERVER_NAME"{FFFFFF}\nПодумайте, какого пола будет ваш персонаж.\n\nВыберите соответствующую кнопку ниже:", "Мужской", "Женский");
+			ShowPlayerDialog(playerid, dGender, DIALOG_STYLE_MSGBOX, "Пол персонажа", "{FFFFFF}Регистрация на {"#MAIN_COLOR"}"#SERVER_NAME"{FFFFFF}\nПодумайте, какого пола будет ваш персонаж.\n\nВыберите соответствующую кнопку ниже:", "Мужской", "Женский");
 		}
 
 		case dGender:
@@ -290,13 +256,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			{
 				if(PlayerData[playerid][pAttempt] == 0) 
 				{
-					SendClientMessage(playerid, -1, "Количество попыток входа {FFA500}ограничено");
+					SendClientMessage(playerid, -1, "Количество попыток входа {"#MAIN_COLOR"}ограничено");
 					return Kick(playerid);
 				}
 
-				SendClientMessage(playerid, -1, "Введенный пароль не верный, попробуйте {FFA500}еще{FFFFFF} раз");
+				SendClientMessage(playerid, -1, "Введенный пароль не верный, {"#MAIN_COLOR"}попробуйте еще раз");
 
-				ShowPlayerDialog(playerid, dLogin, DIALOG_STYLE_INPUT, "Вход в аккаунт", "{FFFFFF}Добро пожаловать на {FFA500}"#SERVER_NAME"{FFFFFF}\nВспомните пароль, который вы придумали при создании аккаунта.\n\nВведите ваш пароль ниже:", "Далее", "");
+				ShowPlayerDialog(playerid, dLogin, DIALOG_STYLE_INPUT, "Вход в аккаунт", "{FFFFFF}Добро пожаловать на {"#MAIN_COLOR"}"#SERVER_NAME"{FFFFFF}\nВспомните пароль, который вы придумали при создании аккаунта.\n\nВведите ваш пароль ниже:", "Далее", "");
 				
 				PlayerData[playerid][pAttempt] -= 1;
 				return true;
@@ -329,9 +295,26 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				{
 					ShowPlayerDialog(playerid, dSecurity, DIALOG_STYLE_LIST, "Безопасность аккаунта", "Защита аккаунта секретным паролем (PIN)\nСмена пароля от аккаунта", "Далее", "Назад");
 				}
+				
+				case 1:
+				{
+				    ShowPlayerDialog(playerid, dReport, DIALOG_STYLE_INPUT, "Связь с администрацией", "{FFFFFF}Опишите вашу проблему коротко и ясно:", "Отправить", "Назад");
+				}
 			}
 		}
 
+		case dReport:
+		{
+			new
+			    msg[32 + (-2 + MAX_PLAYER_NAME) + (-2 + 3) + (-2 + 100) + 1];
+			    
+		    if(!response) return
+				callcmd::mn(playerid);
+				
+			format(msg, sizeof(msg), "[A] Репорт от %s[%d]: %s", PlayerData[playerid][pLogin], playerid, inputtext);
+			SendAdminMessage(0xA2D246FF, msg);
+		}
+		
 		case dSecurity:
 		{
 			if(!response) return callcmd::mn(playerid);
@@ -352,7 +335,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 				case 1:
 				{
-					ShowPlayerDialog(playerid, dReplacePassword, DIALOG_STYLE_INPUT, "Смена пароля от аккаунта", "{FFFFFF}Смена пароля от аккаунта на {FFA500}"#SERVER_NAME"{FFFFFF}\nВспомните свой старый пароль.\n\nВведите этот пароль в поле ниже:", "Далее", "Отмена");
+					ShowPlayerDialog(playerid, dReplacePassword, DIALOG_STYLE_INPUT, "Смена пароля от аккаунта", "{FFFFFF}Смена пароля от аккаунта на {"#MAIN_COLOR"}"#SERVER_NAME"{FFFFFF}\nВспомните свой старый пароль.\n\nВведите этот пароль в поле ниже:", "Далее", "Отмена");
 				}
 			}
 		}
@@ -361,7 +344,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		{
 			if(!response) return callcmd::mn(playerid);
 			if(!strcmp(PlayerData[playerid][pPassword], inputtext, false)) return true;
-			ShowPlayerDialog(playerid, dReplacePassword2, DIALOG_STYLE_INPUT, "Смена пароля от аккаунта", "{FFFFFF}Смена пароля от аккаунта на {FFA500}"#SERVER_NAME"{FFFFFF}\nПридумайте пароль, который будет соответствовать данным требованиям:\n - Пароль должен состоять из латинских букв и цифр.\n - Длина пароля должна быть больше 5 и меньше 20 символов.\n - Пароль должен содержать минимум 1 заглавный символ.\n\nВведите этот пароль в поле ниже:", "Далее", "Отмена");
+			ShowPlayerDialog(playerid, dReplacePassword2, DIALOG_STYLE_INPUT, "Смена пароля от аккаунта", "{FFFFFF}Смена пароля от аккаунта на {"#MAIN_COLOR"}"#SERVER_NAME"{FFFFFF}\nПридумайте пароль, который будет соответствовать данным требованиям:\n - Пароль должен состоять из латинских букв и цифр.\n - Длина пароля должна быть больше 5 и меньше 20 символов.\n - Пароль должен содержать минимум 1 заглавный символ.\n\nВведите этот пароль в поле ниже:", "Далее", "Отмена");
 		}
 
 		case dReplacePassword2: 
@@ -420,7 +403,9 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 		}
 		if(clickedid == TD_PinCode[12])
 		{
-			if(strlen(PlayerData[playerid][pPINAttempt]) < 3) return SendClientMessage(playerid, -1, "PIN код должен содержать больше 3 символов");
+			if(strlen(PlayerData[playerid][pPINAttempt]) < 3) return
+				SendClientMessage(playerid, -1, "PIN код должен содержать больше 3 символов");
+				
 			switch(GetPVarInt(playerid, "PIN"))
 			{
 				case 1:
@@ -431,7 +416,7 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 					for(new i = 0; i < sizeof(TD_PinCode); i++) 
 						TextDrawHideForPlayer(playerid, TD_PinCode[i]);
 
-					SendClientMessage(playerid, 0xFFA500FF, "PIN{FFFFFF} код обновлен");
+					SendClientMessage(playerid, MAIN_COLOR_PREFIX, "PIN{FFFFFF} код обновлен");
 					PlayerTextDrawHide(playerid, TD_PinCodeDisplay[playerid]);
 
 					SetPVarInt(playerid, "PIN", 0);
@@ -441,7 +426,7 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 				{
 					if(strcmp(PlayerData[playerid][pPINAttempt], PlayerData[playerid][pPIN], false))
 					{
-					    SendClientMessage(playerid, -1, "Вы ввели не верный {FFA500}секретный пароль");
+					    SendClientMessage(playerid, -1, "Вы ввели не верный {"#MAIN_COLOR"}секретный пароль");
 						Kick(playerid);
 						return true;
 					}
@@ -500,6 +485,16 @@ public OnPlayerText(playerid, text[])
 	return false;
 }
 
+public OnPlayerCommandReceived(playerid, cmd[], params[], flags)
+{
+	if(0 == PlayerData[playerid][pLogin])
+	{
+	    SendClientMessage(playerid, -1, "Для использования команд войдите в аккаунт");
+	    return false;
+	}
+	return true;
+}
+
 /**
 *
 *	Метка: _cmd
@@ -508,7 +503,7 @@ public OnPlayerText(playerid, text[])
 
 CMD:mn(playerid)
 {
-	return ShowPlayerDialog(playerid, dMenu, DIALOG_STYLE_LIST, "Главное меню", "Безопасность аккаунта", "Далее", "Закрыть");
+	return ShowPlayerDialog(playerid, dMenu, DIALOG_STYLE_LIST, "Главное меню", "Безопасность аккаунта\nСвязь с администрацией", "Далее", "Закрыть");
 }
 
 CMD:addadmin(playerid, params[])
@@ -519,7 +514,7 @@ CMD:addadmin(playerid, params[])
 		level;
 
 	if(!IsAdmin(playerid, ADMIN_LEVEL_DEVELOPER)) return true;
-	if(sscanf(params, "dd", targetid, level)) return SendClientMessage(playerid, -1, "Введите: {FFA500}/addadmin{FFFFFF} [targetid] [level]");
+	if(sscanf(params, "dd", targetid, level)) return SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/addadmin{FFFFFF} [targetid] [level]");
 	
 	mysql_format(connect_id, request, sizeof(request), "INSERT INTO admins (id, level, reg_date, reg_ip, reg_admin) VALUES ('%d', '%d', UNIX_TIMESTAMP(), '%s', '%e')", PlayerData[targetid][pID], level, PlayerData[targetid][pIP], PlayerData[playerid][pLogin]);
 	mysql_query(connect_id, request);
@@ -534,12 +529,106 @@ CMD:addadmin(playerid, params[])
 
 CMD:ahelp(playerid)
 {
-	if(IsAdmin(playerid, ADMIN_LEVEL_IMPROVER))  SendClientMessage(playerid, -1, "/mute /kick");
-	if(IsAdmin(playerid, ADMIN_LEVEL_MODERATOR)) SendClientMessage(playerid, -1, "/unmute");
-	if(IsAdmin(playerid, ADMIN_LEVEL_SPECTATE))  SendClientMessage(playerid, -1, "");
+	if(IsAdmin(playerid, ADMIN_LEVEL_IMPROVER))  SendClientMessage(playerid, -1, "/mute /kick /tp");
+	if(IsAdmin(playerid, ADMIN_LEVEL_MODERATOR)) SendClientMessage(playerid, -1, "/unmute /ban /offban");
+	if(IsAdmin(playerid, ADMIN_LEVEL_SPECTATE))  SendClientMessage(playerid, -1, "/unban");
 	if(IsAdmin(playerid, ADMIN_LEVEL_MAIN))      SendClientMessage(playerid, -1, "");
 	if(IsAdmin(playerid, ADMIN_LEVEL_SPECIAL))   SendClientMessage(playerid, -1, "");
 	if(IsAdmin(playerid, ADMIN_LEVEL_DEVELOPER)) SendClientMessage(playerid, -1, "/addadmin");
+	return true;
+}
+
+CMD:unban(playerid, params[])
+{
+	new
+	    request[91 + (-2 + 11) + 1],
+	    reason[50 + 1],
+		nickname[MAX_PLAYER_NAME + 1],
+	    id;
+	    
+	if(!IsAdmin(playerid, ADMIN_LEVEL_SPECTATE)) return true;
+	
+	if(sscanf(params, "s[24]s[50]", nickname, reason)) return
+	    SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/unban{FFFFFF} [nickname] [reason]");
+
+	mysql_format(connect_id, request, sizeof(request), "SELECT id FROM users WHERE login = '%e'", nickname);
+	mysql_query(connect_id, request);
+	
+	if(cache_num_rows() == 0) return
+	    SendClientMessage(playerid, -1, "Игрока с данным ником несуществует");
+
+	cache_get_value_name_int(0, "id", id);
+	
+	mysql_format(connect_id, request, sizeof(request), "SELECT id FROM bans WHERE time_end > UNIX_TIMESTAMP() AND user_id = '%d' AND unbanned = '0'", id);
+	mysql_query(connect_id, request);
+	
+	if(cache_num_rows() == 0) return
+		SendClientMessage(playerid, -1, "Игрок с данным ником не заблокирован");
+		
+	UpdateDatabase("bans", "unbanned", IntToStr(1), "id", IntToStr(id));
+	
+	format(request, sizeof(request), "Администратор %s[%d] разблокировал игрока %s.Причина: %s", PlayerData[playerid][pLogin], playerid, nickname, reason);
+	SendClientMessageToAll(0xFF0000FF, request);
+	
+	return true;
+}
+
+CMD:ban(playerid, params[])
+{
+	new
+	    targetid,
+	    time,
+	    request[114 + ((-2 + MAX_PLAYER_NAME) * 2) + 50 + 1];
+	    
+	if(!IsAdmin(playerid, ADMIN_LEVEL_MODERATOR)) return true;
+	
+	if(sscanf(params, "dds[50]", targetid, time, request) || !IsPlayerConnected(targetid) || time < 1 || time > 30) return
+		SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/ban{FFFFFF} [targetid] [day(1-30)] [reason]");
+	
+	format(request, sizeof(request), "Администратор %s[%d] заблокировал на %d дней игрока %s[%d].Причина: %s", PlayerData[playerid][pLogin], playerid, time, PlayerData[targetid][pLogin], targetid, request);
+	SendClientMessageToAll(0xFF0000FF, request);
+
+	mysql_format(connect_id, request, sizeof(request), "INSERT INTO bans (user_id, admin_id, time_start, time_end, user_ip, admin_ip) VALUES ('%d', '%d', '%d', '%d', '%s', '%s')", PlayerData[targetid][pID], PlayerData[playerid][pID], gettime(), (gettime() + (86400 * time)), PlayerData[targetid][pIP], PlayerData[playerid][pIP]);
+	mysql_query(connect_id, request);
+	
+	Kick(targetid);
+	return true;
+}
+
+CMD:offban(playerid, params[])
+{
+	new
+	    id,
+	    time,
+	    nickname[MAX_PLAYER_NAME + 1],
+	    reason[50 + 1],
+	    request[114 + ((-2 + MAX_PLAYER_NAME) * 2) + 50 + 1];
+
+	if(!IsAdmin(playerid, ADMIN_LEVEL_MODERATOR)) return true;
+
+	if(sscanf(params, "s[24]ds[50]", nickname, time, reason) || time < 1 || time > 30) return
+		SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/ban{FFFFFF} [nickname] [day(1-30)] [reason]");
+
+
+	mysql_format(connect_id, request, sizeof(request), "SELECT id FROM users WHERE login = '%e'", nickname);
+	mysql_query(connect_id, request);
+
+	if(cache_num_rows() == 0) return
+	    SendClientMessage(playerid, -1, "Игрока с данным ником несуществует");
+
+	cache_get_value_name_int(0, "id", id);
+
+	mysql_format(connect_id, request, sizeof(request), "SELECT id FROM bans WHERE UNIX_TIMESTAMP() > time_end AND user_id = '%d' AND unbanned = '0'", id);
+	mysql_query(connect_id, request);
+
+	if(cache_num_rows() != 0) return
+		SendClientMessage(playerid, -1, "Игрок с данным ником уже заблокирован");
+		
+	format(request, sizeof(request), "Администратор %s[%d] заблокировал на %d дней оффлайн игрока %s.Причина: %s", PlayerData[playerid][pLogin], playerid, time, nickname, reason);
+	SendClientMessageToAll(0xFF0000FF, request);
+
+	mysql_format(connect_id, request, sizeof(request), "INSERT INTO bans (user_id, admin_id, time_start, time_end, user_ip, admin_ip) VALUES ('%d', '%d', '%d', '%d', '%s', '%s')", id, PlayerData[playerid][pID], gettime(), (gettime() + (86400 * time)), "OFFLINE-BAN", PlayerData[playerid][pIP]);
+	mysql_query(connect_id, request);
 	return true;
 }
 
@@ -550,8 +639,11 @@ CMD:tp(playerid, params[])
 		Float:_x,
 		Float:_y,
 		Float:_z;
+		
+	if(!IsAdmin(playerid, ADMIN_LEVEL_IMPROVER)) return true;
 
-	if(sscanf(params, "d", targetid) || !IsPlayerConnected(targetid)) return SendClientMessage(playerid, -1, "Введите: {FFA500}/tp{FFFFFF} [targetid]");
+	if(sscanf(params, "d", targetid) || !IsPlayerConnected(targetid)) return
+		SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/tp{FFFFFF} [targetid]");
 	
 	GetPlayerPos(targetid, _x, _y, _z);
 	SetPlayerPos(playerid, _x, _y, _z);
@@ -568,10 +660,15 @@ CMD:kick(playerid, params[])
 		targetid, 
 		msg[68 + ((-2 + MAX_PLAYER_NAME) * 2) + ((-2 + 3) * 2) + 50 + 1];
 
-	if(sscanf(params, "ds[50]", targetid, msg) || !IsPlayerConnected(targetid)) return SendClientMessage(playerid, -1, "Введите: {FFA500}/kick{FFFFFF} [targetid] [reason]");
-	if(IsAdmin(targetid, ADMIN_LEVEL_IMPROVER) && !IsAdmin(playerid, ADMIN_LEVEL_SPECTATE)) return SendClientMessage(playerid, -1, "Вы не можете кикнуть администратора");
+	if(sscanf(params, "ds[50]", targetid, msg) || !IsPlayerConnected(targetid)) return
+		SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/kick{FFFFFF} [targetid] [reason]");
+		
+	if(IsAdmin(targetid, ADMIN_LEVEL_IMPROVER) && !IsAdmin(playerid, ADMIN_LEVEL_SPECTATE)) return
+		SendClientMessage(playerid, -1, "Вы не можете кикнуть администратора");
+		
 	format(msg, sizeof(msg), "Администратор %s[%d] отсоединил от сервера игрока %s[%d].Причина: %s", PlayerData[playerid][pLogin], playerid, PlayerData[targetid][pLogin], targetid, msg);
 	SendClientMessageToAll(0xFF0000FF, msg);
+	
 	Kick(targetid);
 	return true;
 }
@@ -585,7 +682,8 @@ CMD:mute(playerid, params[])
 
 	if(!IsAdmin(playerid, ADMIN_LEVEL_IMPROVER)) return true;
 
-	if(sscanf(params, "dds[50]", targetid, time, msg) || time > 300 || time < 1 || !IsPlayerConnected(targetid)) return SendClientMessage(playerid, -1, "Введите: {FFA500}/mute{FFFFFF} [targetid] [count minute (1-300)] [reason]");
+	if(sscanf(params, "dds[50]", targetid, time, msg) || time > 300 || time < 1 || !IsPlayerConnected(targetid)) return
+		SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/mute{FFFFFF} [targetid] [count minute (1-300)] [reason]");
 	
 	format(msg, sizeof(msg), "Администратор %s[%d] поставил затычку на %d минут игроку %s[%d].Причина: %s", PlayerData[playerid][pLogin], playerid, time, PlayerData[targetid][pLogin], targetid, msg);
 	SendClientMessageToAll(0xE18D8DFF, msg);
@@ -601,7 +699,9 @@ CMD:unmute(playerid, params[])
 		msg[49 + ((-2 + MAX_PLAYER_NAME) * 2) + ((-2 + 3) * 2) + 50 + 1];
 
 	if(!IsAdmin(playerid, ADMIN_LEVEL_MODERATOR)) return true;
-	if(sscanf(params, "d", targetid) || !IsPlayerConnected(targetid)) return SendClientMessage(playerid, -1, "Введите: {FFA500}/unmute{FFFFFF} [targetid]");
+	
+	if(sscanf(params, "d", targetid) || !IsPlayerConnected(targetid)) return
+		SendClientMessage(playerid, -1, "Введите: {"#MAIN_COLOR"}/unmute{FFFFFF} [targetid]");
 
 	format(msg, sizeof(msg), "Администратор %s[%d] снял затычку с игрока %s[%d]", PlayerData[playerid][pLogin], playerid, PlayerData[targetid][pLogin], targetid);
 	SendClientMessageToAll(0xE18D8DFF, msg);
@@ -614,7 +714,7 @@ CMD:time(playerid)
 {
 	new msg[45 + (-2 + 5) + 1];
 	format(msg, sizeof(msg), "%d{FFFFFF} секунд осталось до снятия затычки", PlayerData[playerid][pMuteTime]);
-	SendClientMessage(playerid, 0xFFA500FF, msg);
+	SendClientMessage(playerid, MAIN_COLOR_PREFIX, msg);
 	return true;
 }
 /**
@@ -622,6 +722,15 @@ CMD:time(playerid)
 *	Метка: _stock
 *
 */
+stock SendAdminMessage(color, text[])
+{
+    foreach(i)
+	{
+		if(!IsPlayerConnected(i) || !IsAdmin(i, ADMIN_LEVEL_IMPROVER)) continue;
+		SendClientMessage(i, color, text);
+	}
+}
+
 stock SendFormattedMessage(playerid, color, fstring[], {Float, _}:...)
 {
 	static const
@@ -679,8 +788,46 @@ stock SendFormattedMessage(playerid, color, fstring[], {Float, _}:...)
 
 stock PlayerSpawn(playerid)
 {
-
+	new request[90 + (-2 + 11) + 1];
+	
+	mysql_format(connect_id, request, sizeof(request), "SELECT * FROM bans WHERE time_end > UNIX_TIMESTAMP() AND user_id = '%d' AND unbanned = '0'", PlayerData[playerid][pID]);
+	mysql_query(connect_id, request);
+	
+	if(cache_num_rows() != 0)
+	{
+		SendClientMessage(playerid, -1, "Ваш аккаунт заблокирован, подробнее в личном кабинете: {"#MAIN_COLOR"}"#SERVER_SITE"/lk");
+		Kick(playerid);
+		return true;
+	}
+	
 	PlayerData[playerid][pLogged] = 1;
+	
+	UpdateDatabase("users", "last_date", IntToStr(gettime()), "id", IntToStr(PlayerData[playerid][pID]));
+	UpdateDatabase("users", "last_ip", PlayerData[playerid][pIP], "id", IntToStr(PlayerData[playerid][pID]));
+
+	mysql_format(connect_id, request, sizeof(request), "SELECT * FROM admins WHERE id = '%d'", PlayerData[playerid][pID]);
+	mysql_query(connect_id, request);
+
+	if(cache_num_rows())
+	{
+		cache_get_value_name_int(0, "level", PlayerData[playerid][pAdminLevel]);
+
+		cache_get_value_name_int(0, "last_date", PlayerData[playerid][pAdminLastDate]);
+		cache_get_value_name_int(0, "reg_date", PlayerData[playerid][pAdminRegDate]);
+
+		cache_get_value_name(0, "last_ip", PlayerData[playerid][pAdminLastIP], 24);
+		cache_get_value_name(0, "reg_ip", PlayerData[playerid][pAdminRegIP], 24);
+
+        UpdateDatabase("admins", "last_date", IntToStr(gettime()), "id", IntToStr(PlayerData[playerid][pID]));
+        UpdateDatabase("admins", "last_ip", PlayerData[playerid][pIP], "id", IntToStr(PlayerData[playerid][pID]));
+	}
+	
+	if(strlen(PlayerData[playerid][pPIN]) == 0)
+	{
+ 		SendClientMessage(playerid, 0xA2D246, "Настоятельно рекомендуем поставить защиту секретным паролем");
+		SendClientMessage(playerid, 0xA2D246, "Для этого введите /mn и откройте пункт 'Безопасность аккаунта'");
+	}
+	
 	SpawnPlayer(playerid);
 			
 	SetTimerEx("OnPlayerTimer", 1000, false, "d", playerid);
